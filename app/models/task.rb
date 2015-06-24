@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
   include RankedModel
   ranks :row_order
 
-  validates :name, presence:true
+  validates :name, :category_id, presence:true
   default_scope {order('row_order ASC')}
   # RELATIONS
   ###########
