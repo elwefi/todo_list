@@ -1,0 +1,5 @@
+<% unless @task.complete%>
+$("#task-modal").html("<%= escape_javascript(render 'complete') %>")
+$("#task-modal").modal("show")
+
+<%end%>

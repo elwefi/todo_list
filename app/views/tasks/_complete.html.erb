@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h3>Complete Task</h3>
+</div>
+<div class="modal-body">
+<ul class="errors"></ul>
+Are you sure you wish to complete <b><%= @task.name %></b>?
+</div>
+<div class="modal-footer">
+  <%= link_to "Yes, Complete This Task", task_save_complete_path(@task), method: :put, remote: true, class: "btn btn-success" %>
+  <%= link_to "No, Please Don't", "#", class: "btn", data: { dismiss: "modal" } %>
+</div>

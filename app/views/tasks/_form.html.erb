@@ -1,0 +1,24 @@
+<%= form_for @task, remote: true, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+  <div class="modal-body">
+    <ul class="errors"></ul>
+
+    <div class="control-group">
+      <%= f.label :task, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name, :placeholder => "TO DO"%>
+      </div>
+    </div>
+
+        <div class="control-group">
+      <%= f.label :category, class: "control-label" %>
+      <div class="controls">
+        <%= f.collection_select :category_id, @category, :id, :name, prompt: false %>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<center><h4> You have <%= @uncomplete.count%>  task(s) incompleted</h4></center>
+<div class="progress progress-striped active">
+  <div class="bar bar-success" style="width: <%= complete() %>%;" >
+    <span class="sr-only"> <%= complete()%>  % Completed Tasks (<%= @complete.count%> Tasks)</span>
+  </div>
+  <div class="bar bar-danger" style= "width: <%= uncomplete()%>%;" >
+    <span class="sr-only">  <%= uncomplete()%> % Uncompleted Tasks (<%= @uncomplete.count%> Tasks)</span>
+  </div>
+</div>

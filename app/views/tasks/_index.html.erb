@@ -1,0 +1,19 @@
+<% @tasks.each do |task| %>
+  <tr data-item-id=<%= "#{task.id}" %> class= "item <%= color(task) %>"  >
+    <td class="span6"><%= task.name %></td>
+    <td class="span3"><%= task.category.name %></td>
+    <td class="span3">
+      <center>
+      <%= link_to task_complete_path(task), remote: true, class: "btn btn-default" , disabled: display(task) do %>
+        <i class="icon-ok"></i>
+      <% end %>
+      <%= link_to edit_task_path(task), remote: true, class: "btn btn-default" do %>
+        <i class="icon-pencil"></i>
+      <% end %>
+            <%= link_to task_delete_path(task), remote: true, class: "btn btn-default" do %>
+        <i class="icon-remove icon-red"></i>
+      <% end %>
+    </center>
+    </td>
+  </tr>
+<% end %>
